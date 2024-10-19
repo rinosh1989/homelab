@@ -8,6 +8,9 @@ RUN mkdir /var/lock && \
     uci set uhttpd.main.interpreter='.lua=/usr/bin/lua' && \
     uci commit uhttpd
 
+#install for USB wireless adapter/
+RUN opkg install kmod-rt2800-lib kmod-rt2800-usb kmod-rt2x00-lib kmod-rt2x00-usb
+
 USER root
 
 # using exec format so that /sbin/init is proc 1 (see procd docs)
